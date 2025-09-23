@@ -118,7 +118,7 @@
             margin: 0 0 0.3rem 0;
             color: var(--text-primary);
             font-weight: bold;
-}
+        }
 
         .info-block p {
             margin: 0.1rem 0;
@@ -157,6 +157,40 @@
             transform: translateY(-2px);
         }
 
+        /* Section Profils */
+        .profiles {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--bg-section);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px var(--shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .profiles h2 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .profiles-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .profiles-icons a img {
+            height: 40px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .profiles-icons a:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.2);
+        }
+
         /* Adaptation mobile */
         @media (max-width: 768px) {
             body {
@@ -174,10 +208,10 @@
                 padding-left: 0;
             }
             .infos h1 {
-                font-size: 1.2rem; /* Réduit de 1.3rem à 1.2rem (≈19.2px) */
+                font-size: 1.2rem;
             }
             .info-block h2 {
-                font-size: 0.95rem; /* Légèrement réduit pour mobile (≈15.2px) */
+                font-size: 0.95rem;
             }
             .section-link {
                 font-size: 1rem;
@@ -224,10 +258,16 @@
             <a href="enseignement.html" class="section-link">Enseignement</a>
             <a href="publications.html" class="section-link">Publications</a>
         </div>
-    </div>
-</body>
-</html>
 
-
-
-
+        <!-- Profils académiques et professionnels -->
+        <div class="profiles">
+            <h2>Profils académiques et professionnels</h2>
+            <div class="profiles-icons">
+                <a href="https://ton-laboratoire.fr" target="_blank" title="Mon laboratoire">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/microscope.png" alt="Laboratoire">
+                </a>
+                <a href="https://scholar.google.com/citations?user=xxxx" target="_blank" title="Google Scholar">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar">
+                </a>
+                <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/06
