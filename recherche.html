@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - Dr. Yann BERTHO</title>
+    <style>
+        :root {
+            /* Couleurs cohérentes avec votre charte */
+            --bg-body: #f9f9f9;
+            --bg-header: white;
+            --bg-section: white;
+            --text-primary: #333;
+            --text-secondary: #555;
+            --text-link: #0056b3;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --hover-bg: #e8f4fc;
+            --border-color: #e0e0e0;
+            --research-border: 1px solid #ddd;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-body: #1a1a1a;
+                --bg-header: #252525;
+                --bg-section: #2d2d2d;
+                --text-primary: #e0e0e0;
+                --text-secondary: #aaaaaa;
+                --text-link: #4dabf7;
+                --shadow: rgba(0, 0, 0, 0.3);
+                --hover-bg: #3a3a3a;
+                --border-color: #444;
+                --research-border: 1px solid #555;
+            }
+        }
+        /* Base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--bg-body);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* En-tête */
+        .header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        /* Sections de recherche */
+        .research-section {
+            margin-bottom: 40px;
+        }
+        .research-section h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 0 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--text-primary);
+        }
+        /* Conteneur pour chaque activité de recherche */
+        .research-item {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: var(--research-border);
+            gap: 20px;
+        }
+        .research-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        /* Style pour la photo illustrative */
+        .research-photo {
+            flex: 0 0 250px;
+            max-width: 250px;
+        }
+        .research-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px var(--shadow);
+        }
+        /* Style pour le contenu textuel */
+        .research-content {
+            flex: 1;
+        }
+        .research-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+        .research-collaborators {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin: 0 0 12px 0;
+            font-size: 0.95rem;
+        }
+        .research-description {
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+        }
+        /* Adaptation mobile */
+        @media (max-width: 768px) {
+            .research-item {
+                flex-direction: column;
+            }
+            .research-photo {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+            .research-title {
+                font-size: 1.2rem;
+            }
+            body {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>Recherche</h1>
+        </div>
+
+        <!-- Section Activités en cours -->
+        <div class="research-section">
+            <h2>Activités en cours</h2>
+
+            <!-- Exemple d'activité 1 -->
+            <div class="research-item">
+                <div class="research-photo">
+                    <img src="images/impact.jpg" alt="Illustration impact">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Impact dans un milieu granulaire</h3>
+                    <p class="research-collaborators">
+                        Collaborateurs : D. Carvalho, J. Crassous, B. Darbois Texier, E. Franklin, P. Gondret, A. Seguin
+                    </p>
+                    <p class="research-description">
+                        L’impact d’un projectile dans un milieu granulaire met en jeu deux mécanismes principaux : une résistance inertielle, liée aux collisions entre grains, et une force dépendant de la profondeur, analogue à une pression hydrostatique dans un fluide [9].
+                        La profondeur de pénétration suit une loi d’échelle robuste qui dépend principalement de la densité du projectile et de l’énergie d’impact (hauteur de lâcher).
+                        Lorsque le milieu ou le projectile est mis en rotation, la pénétration augmente significativement (jusqu’à 15 %), grâce à une fluidisation locale des grains qui réduit les frottements [21].
+                        Les parois latérales jouent également un rôle crucial : un confinement même modéré (rapport diamètre conteneur/diamètre projectile inférieur à 5) diminue fortement la pénétration [8].<br>
+                        Dans le cas particulier de l'enfoncement d'un pieu par impacts successifs (enfoncement par percussions répétées), la dynamique évolue d’un régime linéaire vers un ralentissement progressif, avec une profondeur finale d’autant plus réduite que le confinement est marqué.
+                        Les parois latérales, en limitant la dilatance du milieu, peuvent même bloquer totalement la pénétration [18].
+                        Ces mécanismes éclairent des phénomènes allant de la physique des cratères d’impact à la conception d’outils de forage.
+                        Ils ouvrent aussi des perspectives pour des applications en génie civil (fondations, stabilisation des sols), protection balistique (boucliers granulaires) ou exploration spatiale (robots fouisseurs, sondes planétaires).
+                    </p>
+                </div>
+            </div>
+
+                        <!-- Exemple d'activité 2 -->
+            <div class="research-item">
+                <div class="research-photo">
+                    <img src="images/avalanche.jpg" alt="Illustration avalanche">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">La maîtrise des avalanches grâce aux obstacles</h3>
+                    <p class="research-collaborators">
+                        Collaborateurs : J. Benito, B. Darbois Texier, I. Ippolito, P. Gondret
+                    </p>
+                    <p class="research-description">                     
+                        Les écoulements granulaires sur plans inclinés, comme les avalanches ou les glissements de terrain, peuvent être efficacement régulés par des réseaux d’obstacles.
+                        Nous montrons expérimentalement que ces obstacles augmentent significativement la stabilité des couches granulaires en relevant l’angle critique d'avalanche [11] et en réduisant les débits d’écoulement en régime stationnaire [19].
+                        Cet effet résulte d’une friction additionnelle induite par les obstacles, proportionnelle à leur densité et à l’épaisseur de la couche granulaire.
+                        Les résultats révèlent que les obstacles modifient profondément la dynamique de l’écoulement : alors qu’en leur absence le débit croît de manière supralinéaire avec l’épaisseur de grains, leur présence atténue cette dépendance jusqu'à une saturation dans les configurations les plus denses, supprimant presque toute sensibilité à l’épaisseur.
+                        Un modèle combinant la rhéologie µ(I) et une force de traînée additionnelle permet de prédire ces comportements, confirmant l'existance d'un seuil de densité d’obstacles au-delà duquel leur effet stabilisateur devient significatif.
+                        Ces travaux ouvrent des perspectives concrètes pour la prévention des risques naturels (stabilisation des pentes par des forêts ou des structures artificielles) et l’optimisation industrielle (contrôle des écoulements dans les silos ou convoyeurs).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Exemple d'activité 3 - À remplacer -->
+            <div class="research-item">
+                <div class="research-photo">
+                    <img src="images/activite.jpg" alt="Illustration activité 3">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Titre</h3>
+                    <p class="research-collaborators">
+                        Collaborateurs :
+                    </p>
+                    <p class="research-description">
+                        Description.
+                    </p>
+                </div>
+            </div>  
+        </div>
+
+        <!-- Section Activités passées -->
+        <div class="research-section">
+            <h2>Activités passées</h2>
+
+            <!-- Exemple d'activité passée 1 - À remplacer -->
+            <div class="research-item">
+                <div class="research-photo">
+                    <img src="images/oeuf.jpg" alt="Illustration oeuf">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Les étonnantes propriétés du blanc d’œuf révélées par sa microstructure</h3>
+                    <p class="research-collaborators">
+                        Collaborateurs : B. Darbois Texier, L. Pauchard
+                    </p>
+                    <p class="research-description">
+                        Le blanc d’œuf, fluide du quotidien, révèle une rhéologie complexe : son réseau de protéines enchevêtrées lui confère à la fois une viscoélasticité et un comportement rhéofluidifiant, où la viscosité diminue sous sollicitation [17].
+                        Cette propriété facilite l’incorporation d’air lors du battage, tandis que son module de cisaillement élastique (≈ 2,3 Pa) et sa viscosité à faible cisaillement (0,2–0,4 Pa s) reflètent sa capacité à stabiliser la structure formée.
+                        Le rôle de la viscosité apparaît également dans le test de rotation des œufs : lorsqu’un œuf cru est brièvement arrêté, son intérieur fluide poursuit son mouvement et remet la coquille en rotation.
+                        Cette dynamique est décrite par un modèle simple, fondé sur la diffusion de la condition de non-glissement à la paroi, qui reproduit la décroissance de la vitesse résiduelle et fournit une estimation de la viscosité (≈ 0,23 Pa s) en accord avec les mesures rhéologiques.
+                        Enfin, le séchage d’un film de blanc d’œuf engendre des fissures anisotropes alignées dans la direction d’étalement, signature de l’orientation des protéines.
+                        Ces résultats montrent comment la microstructure protéique gouverne des comportements macroscopiques exploitables, de la stabilisation des mousses à la conception de matériaux bio-inspirés.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Exemple d'activité passée 2 - À remplacer -->
+            <div class="research-item">
+                <div class="research-photo">
+                    <img src="images/affouillement.jpg" alt="Illustration affouillement">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Titre</h3>
+                    <p class="research-collaborators">
+                        Collaborateurs : P. Gondret, F. Lachaussée, C. Morize, A. Sauret
+                    </p>
+                    <p class="research-description">
+                        L’érosion d’un lit granulaire autour d’un cylindre vertical, phénomène bien documenté en hydraulique et géomorphologie, est généralement dominée par un creusement en fer à cheval à la base de l’obstacle.
+                        Ce motif, dû à la contraction des lignes de courant et à un vortex enveloppant, apparaît dès que le nombre de Shields (ratio entre la contrainte de cisaillement et le poids des grains) dépasse un seuil critique.
+                        Il domine pour des écoulements intenses, atteignant des profondeurs pouvant représenter jusqu’à 40 % du diamètre du cylindre.
+                        L’originalité de cette étude réside dans la mise en évidence d’un second motif d’érosion, jusqu’ici méconnu : deux fosses allongées symétriques, apparaissant en aval du cylindre sous l’effet des tourbillons alternés de Bénard-von Kármán [14].
+                        Ce motif, moins profond mais plus étendu, se développe pour des conditions d’écoulement proches du seuil d’apparition du creusement en fer à cheval.
+                        Il est cependant rapidement inhibé par ce dernier lorsque l’intensité de l’écoulement augmente, révélant une compétition dynamique entre les deux processus.
+                        Ces observations, où les seuils d’apparition dépendent faiblement du diamètre du cylindre, ouvrent des perspectives pour la modélisation fine de l’affouillement autour des structures (piles de pont, fondations offshore) et la compréhension des motifs géomorphologiques en aval d’obstacles.
+                        Elles soulignent aussi l’importance de considérer les interactions entre motifs d’érosion pour prédire l’évolution des lits granulaires en présence d’écoulements turbulents.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
