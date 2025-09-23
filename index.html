@@ -6,7 +6,6 @@
     <title>Dr. Yann BERTHO - Université Paris-Saclay</title>
     <style>
         :root {
-            /* Couleurs par défaut (mode clair) */
             --bg-body: #f9f9f9;
             --bg-header: white;
             --bg-section: white;
@@ -45,6 +44,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            min-height: 80vh; /* pour pousser le footer vers le bas */
         }
 
         header {
@@ -82,7 +82,6 @@
         .infos h1 {
             font-size: 1.4rem;
             margin: 0 0 0.2rem 0;
-            color: var(--text-primary);
             line-height: 1.2;
         }
 
@@ -106,7 +105,6 @@
             font-size: 1rem;
             margin: 0 0 0.3rem 0;
             font-weight: bold;
-            color: var(--text-primary);
         }
 
         .info-block p {
@@ -138,69 +136,51 @@
             transform: translateY(-2px);
         }
 
-        /* Bloc profils */
-        .profiles {
-            margin-top: 30px;
-        }
-
-        .profiles h2 {
-            font-size: 1.2rem;
-            font-style: italic;
-            font-weight: normal;
-            margin-bottom: 15px;
+        /* Pied de page discret */
+        footer {
+            border-top: 1px solid var(--shadow);
+            padding: 15px 10px;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            text-align: center;
-        }
-
-        .profiles-group {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: var(--bg-section);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px var(--shadow);
-        }
-
-        .profiles-group h3 {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: var(--text-primary);
-        }
-
-        .profiles-icons {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 25px;
-            justify-content: flex-start;
         }
 
-        .profiles-icons a {
-            text-align: center;
+        .footer-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-group a {
             text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            width: 90px;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-align: center;
         }
 
-        .profiles-icons img {
-            height: 40px;
-            margin-bottom: 5px;
-            transition: transform 0.3s, filter 0.3s;
+        .footer-group img {
+            height: 25px;
+            display: block;
+            margin: 0 auto 3px;
+            opacity: 0.8;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
-        .profiles-icons a:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.2);
+        .footer-group a:hover img {
+            transform: scale(1.1);
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
-            body { font-size: 15px; }
-            header { flex-direction: column; }
-            .infos { padding-left: 0; }
-            .infos h1 { font-size: 1.2rem; }
-            .section-link { font-size: 1rem; padding: 12px 15px; }
-            .profiles-icons { justify-content: center; }
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -212,72 +192,3 @@
             </div>
             <div class="infos">
                 <h1>Dr. Yann B<span class="nom-bertho">ERTHO</span></h1>
-                <a href="mailto:yann.bertho@universite-paris-saclay.fr">yann.bertho@universite-paris-saclay.fr</a>
-                <div class="info-block">
-                    <h2>Vice-Doyen de la Faculté des Sciences d'Orsay</h2>
-                    <p>
-                        Bât. 301 - Université Paris-Saclay<br>
-                        91400 Orsay<br>
-                        Tel: 01.69.15.34.90
-                    </p>
-                </div>
-                <div class="info-block">
-                    <h2>Enseignant-Chercheur à l'Université Paris-Saclay</h2>
-                    <p>
-                        Laboratoire FAST<br>
-                        Bât. 530 - Université Paris-Saclay<br>
-                        91400 Orsay<br>
-                        Tel: 01.69.15.80.40
-                    </p>
-                </div>
-            </div>
-        </header>
-
-        <div class="sections">
-            <a href="cv_fr.html" class="section-link">Curriculum Vitæ</a>
-            <a href="recherche.html" class="section-link">Recherche</a>
-            <a href="enseignement.html" class="section-link">Enseignement</a>
-            <a href="publications.html" class="section-link">Publications</a>
-        </div>
-
-        <!-- Profils académiques et professionnels -->
-        <div class="profiles">
-            <h2>Profils académiques et professionnels</h2>
-
-            <!-- Groupe 1 : Institutionnels -->
-            <div class="profiles-group">
-                <h3>Affiliations institutionnelles</h3>
-                <div class="profiles-icons">
-                    <a href="https://www.universite-paris-saclay.fr" target="_blank" title="Université Paris-Saclay">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Université_Paris-Saclay_logo.svg" alt="Université Paris-Saclay">
-                        <div>Université Paris-Saclay</div>
-                    </a>
-                    <a href="https://fast.u-psud.fr" target="_blank" title="Laboratoire FAST">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/microscope.png" alt="Laboratoire FAST">
-                        <div>Laboratoire FAST</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Groupe 2 : Profils personnels -->
-            <div class="profiles-group">
-                <h3>Profils personnels</h3>
-                <div class="profiles-icons">
-                    <a href="https://scholar.google.com/citations?user=xxxx" target="_blank" title="Google Scholar">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar">
-                        <div>Google Scholar</div>
-                    </a>
-                    <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID">
-                        <div>ORCID</div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/tonprofil/" target="_blank" title="LinkedIn">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn">
-                        <div>LinkedIn</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
