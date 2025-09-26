@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Curriculum Vitæ - Dr. Yann BERTHO</title>
     <style>
         :root {
@@ -29,21 +29,30 @@
                 --border-color: #444;
             }
         }
+
+        /* Base */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 16px;
             line-height: 1.4;
             color: var(--text-primary);
             background-color: var(--bg-body);
-            margin: 0;
-            padding: 0;
             transition: background-color 0.3s, color 0.3s;
         }
+
+        /* Conteneur — largeur conservée comme dans tes fichiers originaux */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            box-sizing: border-box;
         }
+
+        /* En-tête */
         .header {
             margin-bottom: 25px;
             padding-bottom: 12px;
@@ -51,38 +60,41 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
+
         h1 {
             color: var(--text-primary);
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* hauteur utilisée pour la taille de l'icône */
             margin: 0;
             font-weight: 600;
         }
-        /* Icône Home */
+
+        /* Liens/images : responsive et empêchent le débordement */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
+        /* Home link — alignement et taille de l'icône */
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 1;
+        }
+        /* on cible l'img (via picture > img) pour fixer la hauteur relative au h1 */
         .home-link img {
-            height: 1.8rem; /* même hauteur que le h1 */
+            height: 1.8rem; /* même que h1 */
             width: auto;
-            vertical-align: middle;
+            display: block;
         }
         .home-link img:hover {
-            opacity: 0.8;
+            opacity: 0.85;
         }
-        /* Image pour le mode clair */
-        .icon-light {
-            display: inline;
-        }
-        .icon-dark {
-            display: none;
-        }
-        /* Image pour le mode sombre */
-        @media (prefers-color-scheme: dark) {
-            .icon-light {
-                display: none;
-            }
-            .icon-dark {
-                display: inline;
-            }
-        }
+
+        /* Sections */
         h2 {
             color: var(--text-primary);
             font-size: 1.5rem;
@@ -90,23 +102,16 @@
             padding-bottom: 6px;
             border-bottom: 2px solid var(--text-primary);
         }
-        h2 a {
-            color: inherit;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: normal;
-        }
-        h2 a:hover {
-            text-decoration: underline;
-        }
+        h2 a { color: inherit; text-decoration:none; font-size:1.2rem; font-weight:normal; }
+        h2 a:hover { text-decoration: underline; }
+
+        /* Table CV (inchangé, version compacte) */
         .cv-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 1.5rem;
         }
-        .cv-table tr {
-            margin-bottom: 0.5rem;
-        }
+        .cv-table tr { margin-bottom: 0.5rem; }
         .cv-table td {
             padding: 6px 0;
             vertical-align: top;
@@ -116,9 +121,8 @@
             padding-right: 12px;
             white-space: nowrap;
         }
-        .cv-table td:last-child {
-            padding-left: 0;
-        }
+        .cv-table td:last-child { padding-left: 0; }
+
         .cv-table li {
             list-style-type: none;
             margin-left: 0;
@@ -134,42 +138,18 @@
             position: absolute;
             left: 0;
         }
-        a {
-            color: var(--text-link);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+
+        a { color: var(--text-link); text-decoration: none; transition: color 0.2s; }
+        a:hover { text-decoration: underline; }
+
         .pdf-icon {
             width: 18px;
             height: 18px;
             vertical-align: middle;
             margin-left: 6px;
         }
-        @media (max-width: 768px) {
-            body {
-                font-size: 15px;
-                line-height: 1.35;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            .home-link img {
-                height: 1.5rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-                margin-top: 1.5rem;
-            }
-            .cv-table td:first-child {
-                padding-right: 8px;
-            }
-            .cv-table li {
-                padding-left: 16px;
-            }
-        }
+
+        /* Sous-listes */
         .sous-liste {
             margin: 0.4rem 0 0.6rem 1.5rem;
             padding-left: 0;
@@ -187,27 +167,35 @@
             position: absolute;
             left: 0;
         }
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
-            .sous-liste {
-                margin-left: 1rem;
-            }
+            body { font-size: 15px; line-height: 1.35; }
+            h1 { font-size: 1.5rem; }
+            .home-link img { height: 1.5rem; }
+            h2 { font-size: 1.3rem; margin-top: 1.5rem; }
+            .cv-table td:first-child { padding-right: 8px; }
+            .cv-table li { padding-left: 16px; }
+            .sous-liste { margin-left: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- En-tête -->
+        <!-- En-tête : titre + icône home (automatique clair/sombre) -->
         <div class="header">
             <h1>Curriculum Vitæ</h1>
-            <a href="index.html" class="home-link">
-                <img src="images/home_light.png" alt="Retour accueil" class="icon-light">
-                <img src="images/home_dark.png" alt="Retour accueil" class="icon-dark">
+
+            <!-- Utilise <picture> pour choisir l'image selon le mode -->
+            <a href="index.html" class="home-link" aria-label="Retour à l'accueil">
+                <picture>
+                    <!-- navigateur en mode sombre : utilise home_dark.png -->
+                    <source srcset="images/home_dark.png" media="(prefers-color-scheme: dark)">
+                    <!-- fallback / mode clair : home_light.png -->
+                    <img src="images/home_light.png" alt="Accueil">
+                </picture>
             </a>
         </div>
-
-        <!-- ===== CONTENU CV (inchangé) ===== -->
-        <!-- Ici tu gardes tout ton contenu cursus, responsabilités, distinctions, etc. -->
-    </div>
 
         <!-- Cursus -->
         <h2>Cursus</h2>
