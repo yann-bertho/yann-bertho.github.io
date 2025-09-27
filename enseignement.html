@@ -63,6 +63,14 @@
             padding: 20px;
         }
 
+        /* --------- Début : styles identiques à cv_fr.html pour la barre de titre --------- */
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
         .header {
             margin-bottom: 30px;
             padding-bottom: 15px;
@@ -70,6 +78,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
 
         h1 {
@@ -78,6 +87,25 @@
             margin: 0;
             font-weight: 600;
         }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .home-link img {
+            height: 1.8rem;
+            width: auto;
+            display: block;
+        }
+
+        .home-link img:hover {
+            opacity: 0.85;
+        }
+
+        /* --------- Fin : styles identiques à cv_fr.html --------- */
 
         .language-switch {
             display: flex;
@@ -175,7 +203,6 @@
         tr[data-level="M1"] .level-indicator { background-color: var(--level-m1); }
         tr[data-level="M2"] .level-indicator { background-color: var(--level-m2); }
 
-        /* Style pour les responsabilités */
         .responsibility-row {
             background-color: rgba(52, 152, 219, 0.05) !important;
             font-style: italic;
@@ -243,14 +270,24 @@
             .level-indicator {
                 width: 3px;
             }
+
+            /* Ajustements titre/icône home pour mobile */
+            h1 { font-size: 1.5rem; }
+            .home-link img { height: 1.5rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- En-tête -->
+        <!-- En-tête avec icône home ajouté comme dans cv_fr.html -->
         <div class="header">
             <h1>Enseignement</h1>
+            <a href="index.html" class="home-link" aria-label="Retour à l'accueil">
+                <picture>
+                    <source srcset="images/home_dark.png" media="(prefers-color-scheme: dark)">
+                    <img src="images/home_light.png" alt="Accueil">
+                </picture>
+            </a>
         </div>
 
         <!-- Enseignements actuels (2023-2024) -->
@@ -431,9 +468,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
