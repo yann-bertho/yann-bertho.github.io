@@ -194,7 +194,67 @@
                 font-size: 1rem;
                 padding: 12px 15px;
             }
-        }
+
+/* Pied de page discret */
+      footer {
+      border-top: 1px solid var(--shadow);
+      padding: 15px 0;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .separator {
+      width: 1px;
+      height: 30px;
+      background-color: var(--shadow);
+    }
+
+    .footer-group a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      text-align: center;
+    }
+
+    .footer-group img {
+      height: 22px;
+      display: block;
+      margin: 0 auto 3px;
+      opacity: 0.75;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .footer-group a:hover img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .separator {
+        display: none;
+      }
+    }
     </style>
 </head>
 <body>
