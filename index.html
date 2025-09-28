@@ -6,7 +6,6 @@
     <title>Dr. Yann BERTHO - Université Paris-Saclay</title>
     <style>
         :root {
-            /* Couleurs par défaut (mode clair) */
             --bg-body: #f9f9f9;
             --bg-header: white;
             --bg-section: white;
@@ -50,8 +49,6 @@
         header {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* permet d’envoyer le drapeau à droite */
-            align-items: flex-start;
             gap: 20px;
             margin-bottom: 30px;
             padding: 20px;
@@ -78,8 +75,9 @@
             min-width: 300px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             padding-left: 20px;
+            position: relative;
         }
 
         .infos h1 {
@@ -87,6 +85,9 @@
             margin: 0 0 0.2rem 0;
             color: var(--text-primary);
             line-height: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .nom-bertho {
@@ -154,13 +155,10 @@
         }
 
         /* Icône drapeau */
-        .lang-switch {
-            margin-left: auto;
-        }
-
         .lang-switch img {
             width: 32px;
             height: auto;
+            margin-left: 10px;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -183,6 +181,7 @@
             }
             .infos {
                 padding-left: 0;
+                width: 100%;
             }
             .infos h1 {
                 font-size: 1.2rem;
@@ -194,21 +193,25 @@
                 font-size: 1rem;
                 padding: 12px 15px;
             }
-            .lang-switch {
-                align-self: flex-end;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- En-tête avec photo, infos et drapeau -->
+        <!-- En-tête avec photo et infos -->
         <header>
             <div class="photo">
                 <img src="images/yann.gif" alt="Photo de Dr. Yann BERTHO">
             </div>
             <div class="infos">
-                <h1>Dr. Yann B<span class="nom-bertho">ERTHO</span></h1>
+                <h1>
+                    Dr. Yann B<span class="nom-bertho">ERTHO</span>
+                    <span class="lang-switch">
+                        <a href="index_en.html">
+                            <img src="images/english.png" alt="English version">
+                        </a>
+                    </span>
+                </h1>
                 <a href="mailto:yann.bertho@universite-paris-saclay.fr">yann.bertho@universite-paris-saclay.fr</a>
                 <div class="info-block">
                     <h2>Vice-Doyen de la Faculté des Sciences d'Orsay</h2>
@@ -228,11 +231,6 @@
                     </p>
                 </div>
             </div>
-            <div class="lang-switch">
-                <a href="index_en.html">
-                    <img src="images/english.png" alt="English version">
-                </a>
-            </div>
         </header>
         <!-- Liens vers les différentes sections -->
         <div class="sections">
@@ -244,4 +242,3 @@
     </div>
 </body>
 </html>
-
