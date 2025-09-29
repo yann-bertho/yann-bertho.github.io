@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -168,6 +167,34 @@
             transform: scale(1.1);
         }
 
+        /* Pied de page */
+        footer {
+            margin-top: 40px;
+            padding: 15px 0;
+            border-top: 1px solid var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+
+        footer a img {
+            height: 30px;
+            transition: transform 0.2s, opacity 0.3s;
+        }
+
+        footer a img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .footer-separator {
+            width: 1px;
+            background-color: var(--text-secondary);
+            margin: 0 15px;
+        }
+
         @media (max-width: 768px) {
             body {
                 font-size: 15px;
@@ -194,7 +221,31 @@
                 font-size: 1rem;
                 padding: 12px 15px;
             }
-    }
+            footer {
+                gap: 15px;
+            }
+            footer a img {
+                height: 24px;
+            }
+        }
+
+        /* Gestion clair/sombre pour logos institutionnels */
+        @media (prefers-color-scheme: dark) {
+            .logo-fast {
+                content: url("images/logo_FAST-dark.png");
+            }
+            .logo-upsay {
+                content: url("images/logo_upsay-dark.png");
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            .logo-fast {
+                content: url("images/logo_FAST-light.png");
+            }
+            .logo-upsay {
+                content: url("images/logo_upsay-light.png");
+            }
+        }
     </style>
 </head>
 <body>
@@ -206,7 +257,7 @@
             </div>
             <div class="infos">
                 <h1>
-                    Dr. Yann BERTHO</span>
+                    Dr. Yann BERTHO
                     <span class="lang-switch">
                         <a href="index_en.html">
                             <img src="images/english.png" alt="English version">
@@ -240,8 +291,30 @@
             <a href="enseignement.html" class="section-link">Enseignement</a>
             <a href="publications.html" class="section-link">Publications</a>
         </div>
+
+        <!-- Pied de page avec logos -->
+        <footer>
+            <!-- Institutionnels -->
+            <a href="https://www.fast.u-psud.fr" target="_blank" title="Laboratoire FAST">
+                <img class="logo-fast" alt="Logo FAST">
+            </a>
+            <a href="https://www.universite-paris-saclay.fr" target="_blank" title="Université Paris-Saclay">
+                <img class="logo-upsay" alt="Logo UPSay">
+            </a>
+
+            <div class="footer-separator"></div>
+
+            <!-- Personnels -->
+            <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" title="Google Scholar">
+                <img src="images/logo_Scholar.png" alt="Google Scholar">
+            </a>
+            <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" title="ORCID">
+                <img src="images/logo_ORCID.png" alt="ORCID">
+            </a>
+            <a href="www.linkedin.com/in/yann-bertho" target="_blank" title="LinkedIn">
+                <img src="images/logo_LinkedIn.png" alt="LinkedIn">
+            </a>
+        </footer>
     </div>
 </body>
 </html>
-
-
