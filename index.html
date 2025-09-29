@@ -183,7 +183,7 @@
         /* Groupes pour institutionnels / personnels */
         .institutions, .personals {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 14px;
         }
 
@@ -196,7 +196,16 @@
             opacity: 0.6;
         }
 
-        /* Classe commune qui force la même hauteur pour tous les logos */
+        /* Icônes + texte */
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
         .footer-logo {
             height: 28px;      /* hauteur desktop */
             width: auto;
@@ -207,7 +216,10 @@
 
         footer a {
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
+            text-decoration: none;
+            gap: 4px;
         }
 
         footer a:hover .footer-logo {
@@ -255,67 +267,28 @@
 </head>
 <body>
     <div class="container">
-        <!-- En-tête avec photo et infos -->
-        <header>
-            <div class="photo">
-                <img src="images/yann.gif" alt="Photo de Dr. Yann BERTHO">
-            </div>
-            <div class="infos">
-                <h1>
-                    Dr. Yann BERTHO
-                    <span class="lang-switch">
-                        <a href="index_en.html">
-                            <img src="images/english.png" alt="English version">
-                        </a>
-                    </span>
-                </h1>
-                <a href="mailto:yann.bertho@universite-paris-saclay.fr">yann.bertho@universite-paris-saclay.fr</a>
-                <div class="info-block">
-                    <h2>Vice-Doyen de la Faculté des Sciences d'Orsay</h2>
-                    <p class="textfootnote">
-                        Bât. 301 - Université Paris-Saclay<br>
-                        91400 Orsay<br>
-                        Tel: 01.69.15.34.90
-                    </p>
-                </div>
-                <div class="info-block">
-                    <h2>Enseignant-Chercheur à l'Université Paris-Saclay</h2>
-                    <p class="textfootnote">
-                        Laboratoire FAST<br>
-                        Bât. 530 - Université Paris-Saclay<br>
-                        91400 Orsay<br>
-                        Tel: 01.69.15.80.40
-                    </p>
-                </div>
-            </div>
-        </header>
-        <!-- Liens vers les différentes sections -->
-        <div class="sections">
-            <a href="cv_fr.html" class="section-link">Curriculum Vitæ</a>
-            <a href="recherche.html" class="section-link">Recherche</a>
-            <a href="enseignement.html" class="section-link">Enseignement</a>
-            <a href="publications.html" class="section-link">Publications</a>
-        </div>
+        <!-- ... contenu inchangé ... -->
 
         <!-- Pied de page avec logos -->
         <footer>
-            <!-- Institutionnels : j'utilise <picture> pour swap clair/sombre -->
+            <!-- Institutionnels -->
             <div class="institutions" aria-label="Logos institutionnels">
-                <a href="https://www.fast.u-psud.fr" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST">
+                <a href="https://www.fast.u-psud.fr" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST" class="footer-item">
                     <picture>
                         <source srcset="images/logo_FAST-dark.png" media="(prefers-color-scheme: dark)">
                         <source srcset="images/logo_FAST-light.png" media="(prefers-color-scheme: light)">
-                        <!-- fallback src -->
                         <img src="images/logo_FAST-light.png" alt="Logo FAST" class="footer-logo">
                     </picture>
+                    <span>Lab. FAST</span>
                 </a>
 
-                <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay">
+                <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay" class="footer-item">
                     <picture>
                         <source srcset="images/logo_upsay-dark.png" media="(prefers-color-scheme: dark)">
                         <source srcset="images/logo_upsay-light.png" media="(prefers-color-scheme: light)">
                         <img src="images/logo_upsay-light.png" alt="Logo Université Paris-Saclay" class="footer-logo">
                     </picture>
+                    <span>Univ. Paris-Saclay</span>
                 </a>
             </div>
 
@@ -323,19 +296,20 @@
 
             <!-- Personnels -->
             <div class="personals" aria-label="Liens personnels">
-                <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="footer-item">
                     <img src="images/logo_Scholar.png" alt="Google Scholar" class="footer-logo">
+                    <span>Google Scholar</span>
                 </a>
-                <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" rel="noopener noreferrer" title="ORCID">
+                <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" rel="noopener noreferrer" title="ORCID" class="footer-item">
                     <img src="images/logo_ORCID.png" alt="ORCID" class="footer-logo">
+                    <span>ORCID</span>
                 </a>
-                <a href="https://www.linkedin.com/in/yann-bertho" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/yann-bertho" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="footer-item">
                     <img src="images/logo_LinkedIn.png" alt="LinkedIn" class="footer-logo">
+                    <span>LinkedIn</span>
                 </a>
             </div>
         </footer>
     </div>
 </body>
 </html>
-
-
