@@ -173,26 +173,46 @@
             padding: 15px 0;
             border-top: 1px solid var(--text-secondary);
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 25px;
+            gap: 18px;
             flex-wrap: wrap;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        footer a img, .logo-fast, .logo-upsay {
-            height: 28px;
-            transition: transform 0.2s, opacity 0.3s;
+        /* Groupes pour institutionnels / personnels */
+        .institutions, .personals {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        footer a img:hover, .logo-fast:hover, .logo-upsay:hover {
-            transform: scale(1.1);
-            opacity: 1;
-        }
-
+        /* Délimiteur vertical */
         .footer-separator {
             width: 1px;
+            height: 28px;
             background-color: var(--text-secondary);
-            margin: 0 15px;
+            margin: 0 12px;
+            opacity: 0.6;
+        }
+
+        /* Classe commune qui force la même hauteur pour tous les logos */
+        .footer-logo {
+            height: 28px;      /* hauteur desktop */
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.18s, opacity 0.25s;
+        }
+
+        footer a {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        footer a:hover .footer-logo {
+            transform: scale(1.06);
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -222,28 +242,13 @@
                 padding: 12px 15px;
             }
             footer {
-                gap: 15px;
+                gap: 12px;
             }
-            footer a img, .logo-fast, .logo-upsay {
-                height: 24px;
+            .footer-logo {
+                height: 24px;  /* hauteur mobile */
             }
-        }
-
-        /* Gestion clair/sombre pour logos institutionnels */
-        @media (prefers-color-scheme: dark) {
-            .logo-fast {
-                content: url("images/logo_FAST-dark.png");
-            }
-            .logo-upsay {
-                content: url("images/logo_upsay-dark.png");
-            }
-        }
-        @media (prefers-color-scheme: light) {
-            .logo-fast {
-                content: url("images/logo_FAST-light.png");
-            }
-            .logo-upsay {
-                content: url("images/logo_upsay-light.png");
+            .footer-separator {
+                height: 20px;
             }
         }
     </style>
@@ -294,26 +299,40 @@
 
         <!-- Pied de page avec logos -->
         <footer>
-            <!-- Institutionnels -->
-            <a href="https://www.fast.u-psud.fr/" target="_blank" title="Laboratoire FAST">
-                <img class="logo-fast" alt="Logo FAST">
-            </a>
-            <a href="https://www.universite-paris-saclay.fr/" target="_blank" title="Université Paris-Saclay">
-                <img class="logo-upsay" alt="Logo UPSay">
-            </a>
+            <!-- Institutionnels : j'utilise <picture> pour swap clair/sombre -->
+            <div class="institutions" aria-label="Logos institutionnels">
+                <a href="https://www.fast.u-psud.fr/" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST">
+                    <picture>
+                        <source srcset="images/logo_FAST-dark.png" media="(prefers-color-scheme: dark)">
+                        <source srcset="images/logo_FAST-light.png" media="(prefers-color-scheme: light)">
+                        <!-- fallback src -->
+                        <img src="images/logo_FAST-light.png" alt="Logo FAST" class="footer-logo">
+                    </picture>
+                </a>
 
-            <div class="footer-separator"></div>
+                <a href="https://www.universite-paris-saclay.fr/" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay">
+                    <picture>
+                        <source srcset="images/logo_upsay-dark.png" media="(prefers-color-scheme: dark)">
+                        <source srcset="images/logo_upsay-light.png" media="(prefers-color-scheme: light)">
+                        <img src="images/logo_upsay-light.png" alt="Logo Université Paris-Saclay" class="footer-logo">
+                    </picture>
+                </a>
+            </div>
+
+            <div class="footer-separator" aria-hidden="true"></div>
 
             <!-- Personnels -->
-            <a href="https://scholar.google.com/" target="_blank" title="Google Scholar">
-                <img src="images/logo_Scholar.png" alt="Google Scholar">
-            </a>
-            <a href="https://orcid.org/" target="_blank" title="ORCID">
-                <img src="images/logo_ORCID.png" alt="ORCID">
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
-                <img src="images/logo_LinkedIn.png" alt="LinkedIn">
-            </a>
+            <div class="personals" aria-label="Liens personnels">
+                <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                    <img src="images/logo_Scholar.png" alt="Google Scholar" class="footer-logo">
+                </a>
+                <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer" title="ORCID">
+                    <img src="images/logo_ORCID.png" alt="ORCID" class="footer-logo">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <img src="images/logo_LinkedIn.png" alt="LinkedIn" class="footer-logo">
+                </a>
+            </div>
         </footer>
     </div>
 </body>
