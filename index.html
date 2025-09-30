@@ -183,7 +183,7 @@
         /* Groupes pour institutionnels / personnels */
         .institutions, .personals {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 14px;
         }
 
@@ -196,16 +196,7 @@
             opacity: 0.6;
         }
 
-        /* Icônes + texte */
-        .footer-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
+        /* Classe commune qui force la même hauteur pour tous les logos */
         .footer-logo {
             height: 28px;      /* hauteur desktop */
             width: auto;
@@ -216,10 +207,7 @@
 
         footer a {
             display: inline-flex;
-            flex-direction: column;
             align-items: center;
-            text-decoration: none;
-            gap: 4px;
         }
 
         footer a:hover .footer-logo {
@@ -254,13 +242,17 @@
                 padding: 12px 15px;
             }
             footer {
-                gap: 12px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .institutions, .personals {
+                justify-content: center;
             }
             .footer-logo {
                 height: 24px;  /* hauteur mobile */
             }
             .footer-separator {
-                height: 20px;
+                display: none; /* supprimé en mobile */
             }
         }
     </style>
@@ -313,22 +305,20 @@
         <footer>
             <!-- Institutionnels -->
             <div class="institutions" aria-label="Logos institutionnels">
-                <a href="https://www.fast.u-psud.fr" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST" class="footer-item">
+                <a href="https://www.fast.u-psud.fr" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST">
                     <picture>
                         <source srcset="images/logo_FAST-dark.png" media="(prefers-color-scheme: dark)">
                         <source srcset="images/logo_FAST-light.png" media="(prefers-color-scheme: light)">
                         <img src="images/logo_FAST-light.png" alt="Logo FAST" class="footer-logo">
                     </picture>
-                    <span>Lab. FAST</span>
                 </a>
 
-                <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay" class="footer-item">
+                <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay">
                     <picture>
                         <source srcset="images/logo_upsay-dark.png" media="(prefers-color-scheme: dark)">
                         <source srcset="images/logo_upsay-light.png" media="(prefers-color-scheme: light)">
                         <img src="images/logo_upsay-light.png" alt="Logo Université Paris-Saclay" class="footer-logo">
                     </picture>
-                    <span>Univ. Paris-Saclay</span>
                 </a>
             </div>
 
@@ -336,17 +326,14 @@
 
             <!-- Personnels -->
             <div class="personals" aria-label="Liens personnels">
-                <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="footer-item">
+                <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
                     <img src="images/logo_Scholar.png" alt="Google Scholar" class="footer-logo">
-                    <span>Google Scholar</span>
                 </a>
-                <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" rel="noopener noreferrer" title="ORCID" class="footer-item">
+                <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" rel="noopener noreferrer" title="ORCID">
                     <img src="images/logo_ORCID.png" alt="ORCID" class="footer-logo">
-                    <span>ORCID</span>
                 </a>
-                <a href="https://www.linkedin.com/in/yann-bertho" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="footer-item">
+                <a href="https://www.linkedin.com/in/yann-bertho" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                     <img src="images/logo_LinkedIn.png" alt="LinkedIn" class="footer-logo">
-                    <span>LinkedIn</span>
                 </a>
             </div>
         </footer>
