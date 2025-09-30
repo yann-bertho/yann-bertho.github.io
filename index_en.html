@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -155,7 +154,7 @@
             transform: translateY(-2px);
         }
 
-        /* Icône drapeau */
+        /* Flag icon */
         .lang-switch img {
             width: 32px;
             height: auto;
@@ -166,6 +165,61 @@
 
         .lang-switch img:hover {
             transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding: 15px 0;
+            border-top: 1px solid var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            opacity: 0.9;
+        }
+
+        .institutions, .personals {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-separator {
+            width: 1px;
+            height: 28px;
+            background-color: var(--text-secondary);
+            margin: 0 12px;
+            opacity: 0.6;
+        }
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.18s, opacity 0.25s;
+        }
+
+        footer a {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .footer-text {
+            margin-top: 4px;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        footer a:hover .footer-logo {
+            transform: scale(1.06);
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -194,22 +248,35 @@
                 font-size: 1rem;
                 padding: 12px 15px;
             }
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .institutions, .personals {
+                justify-content: center;
+            }
+            .footer-logo {
+                height: 24px;
+            }
+            .footer-separator {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- En-tête avec photo et infos -->
+        <!-- Header with photo and infos -->
         <header>
             <div class="photo">
-                <img src="images/yann.gif" alt="Photo de Dr. Yann BERTHO">
+                <img src="images/yann.gif" alt="Photo of Dr. Yann BERTHO">
             </div>
             <div class="infos">
                 <h1>
-                    Dr. Yann BERTHO</span>
+                    Dr. Yann BERTHO
                     <span class="lang-switch">
                         <a href="index.html">
-                            <img src="images/francais.png" alt="version française">
+                            <img src="images/francais.png" alt="Version française">
                         </a>
                     </span>
                 </h1>
@@ -223,7 +290,7 @@
                     </p>
                 </div>
                 <div class="info-block">
-                    <h2>Associate professor at Paris-Saclay University</h2>
+                    <h2>Associate Professor at Paris-Saclay University</h2>
                     <p class="textfootnote">
                         Laboratoire FAST<br>
                         Bât. 530 - Université Paris-Saclay<br>
@@ -233,14 +300,55 @@
                 </div>
             </div>
         </header>
-        <!-- Liens vers les différentes sections -->
+        <!-- Section links -->
         <div class="sections">
             <a href="cv_en.html" class="section-link">Curriculum Vitæ</a>
             <a href="recherche_en.html" class="section-link">Research</a>
             <a href="enseignement_en.html" class="section-link">Teaching</a>
             <a href="publications_en.html" class="section-link">Publications</a>
         </div>
+
+        <!-- Footer with logos -->
+        <footer>
+            <!-- Institutional -->
+            <div class="institutions" aria-label="Institutional logos">
+                <a href="https://www.fast.u-psud.fr" target="_blank" rel="noopener noreferrer" title="Laboratoire FAST">
+                    <picture>
+                        <source srcset="images/logo_FAST-dark.png" media="(prefers-color-scheme: dark)">
+                        <source srcset="images/logo_FAST-light.png" media="(prefers-color-scheme: light)">
+                        <img src="images/logo_FAST-light.png" alt="Logo FAST" class="footer-logo">
+                    </picture>
+                    <span class="footer-text">Lab. FAST</span>
+                </a>
+
+                <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer" title="Université Paris-Saclay">
+                    <picture>
+                        <source srcset="images/logo_upsay-dark.png" media="(prefers-color-scheme: dark)">
+                        <source srcset="images/logo_upsay-light.png" media="(prefers-color-scheme: light)">
+                        <img src="images/logo_upsay-light.png" alt="Logo Université Paris-Saclay" class="footer-logo">
+                    </picture>
+                    <span class="footer-text">Univ. Paris-Saclay</span>
+                </a>
+            </div>
+
+            <div class="footer-separator" aria-hidden="true"></div>
+
+            <!-- Personal -->
+            <div class="personals" aria-label="Personal links">
+                <a href="https://scholar.google.fr/citations?user=ueOt2jQAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                    <img src="images/logo_Scholar.png" alt="Google Scholar" class="footer-logo">
+                    <span class="footer-text">Google Scholar</span>
+                </a>
+                <a href="https://orcid.org/0000-0002-0457-8884" target="_blank" rel="noopener noreferrer" title="ORCID">
+                    <img src="images/logo_ORCID.png" alt="ORCID" class="footer-logo">
+                    <span class="footer-text">ORCID</span>
+                </a>
+                <a href="https://www.linkedin.com/in/yann-bertho" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <img src="images/logo_LinkedIn.png" alt="LinkedIn" class="footer-logo">
+                    <span class="footer-text">LinkedIn</span>
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
-
